@@ -32,7 +32,7 @@ import org.springframework.stereotype.Component;
 public class BoyAnnotation {
 	
 	private static Logger logger = Logger.getLogger(BoyAnnotation.class);
-	//@Autowired
+//	@Autowired
 	private UsaGirlFriend usaGirlFriend;
 	private static ApplicationContext ctx;
 	
@@ -48,6 +48,8 @@ public class BoyAnnotation {
 		ctx = new ClassPathXmlApplicationContext("applicationContext-auto.xml");
 		BoyAnnotation boy = (BoyAnnotation) ctx.getBean("boyAnnotation");
 		logger.info(boy.usaGirlFriend.speak());
+		logger.info(boy.usaGirlFriend.speak("chinese"));
+//		boy.usaGirlFriend.speak();             //控制台打印输出
 	}
 	
 }
