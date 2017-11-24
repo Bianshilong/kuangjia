@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	function check(){
+		/* if (document.getElementById("pw1").value!=document.getElementById("pw2").value)  */
+		if($('#pw1').val()!=$('#pw2').val())
+		{
+			alert("两次输入的密码不一致！")
+		}
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+	<input type="text" required="required">
+	<input id="pw1" type="password" />
+	<input id="pw2" type="password" onblur="check()"/> 
+	<input type="submit">
+	</form>
+</body>
+</html>
