@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/org/crazyit/common/dao/BaseDao.java=GBK
+encoding//src/org/crazyit/common/dao/impl/BaseDaoHibernate3.java=GBK
+encoding//src/org/crazyit/common/dao/impl/BaseDaoHibernate4.java=GBK
+encoding//src/org/crazyit/hrsystem/action/AddEmpAction.java=GBK
+encoding//src/org/crazyit/hrsystem/action/LogoutAction.java=GBK
+encoding//src/org/crazyit/hrsystem/action/ProcessPunchAction.java=GBK
+encoding//src/org/crazyit/hrsystem/service/EmpManager.java=GBK
+encoding//src/org/crazyit/hrsystem/service/impl/MgrManagerImpl.java=GBK
+encoding/<project>=UTF-8
