@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bsl.mybatis.domain.UserInfo">
+	<!-- 返回结果对象属性与表字段映射 -->
+	<resultMap type="UserInfo" id="resultListUserInfo" >
+		<id column="id" property="id"/>
+		<result column="username" property="username"/>
+		<result column="password" property="password"/>
+	</resultMap>
+	<!-- 查询所有记录 动态SQL语句，根据查询条件来创造查询结果 -->	
+	<select id="getUserInfoList" parameterType="com.bsl.mybatis.domain.UserInfo" resultMap="resultListUserInfo">
+		select * from user_info
+		<where>	<!-- ##{id:INTEGER}为占位符，id的值，为UserInfo中取出来的id的值，多出来的and,框架对自动处理 -->
+			<if test="null != id">and id = #{id:INTEGER}</if>
+			<if test="null != username and '' !=username">and username like concat('%',#{username:VARCHAR},'%')</if>
+			<if test="null != password and '' !=password">and password =#{password:VARCHAR}</if>
+		</where>
+	</select>
+	<!-- 根据ID查询得到一个UserInfo对象 -->
+	<select id="getUserInfoById" parameterType="Integer" resultType="com.bsl.mybatis.domain.UserInfo">
+		select id,username,password from user_info where id = #{id:INTEGER}
+	</select>
+	<!-- 插入数据库表数据 -->
+	<insert id="insertUserInfo" parameterType="com.bsl.mybatis.domain.UserInfo">
+		insert into user_info(username,password) value (#{username},#{password})
+	</insert>
+	<!-- 更新数据库表数据， 也可以使用动态SQL,但一般不建议使用，可能会产生误操作，导致所有记录被修改-->
+	<update id="updateUserInfo" parameterType="com.bsl.mybatis.domain.UserInfo">
+		update user_info set username=#{username:VARCHAR},password=#{password:VARCHAR} where id=#{id:INTEGER}
+	</update>
+	<!-- 根据ID删除数据库表数据 -->
+	<delete id="deleteUserInfo" parameterType="Integer">
+		delete from user_info where id =#{id:INTEGER}
+	</delete>
+</mapper>
