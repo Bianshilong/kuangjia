@@ -206,7 +206,8 @@ $(function() {
 		SSM.STU.getStudents();
 	})
 	
-	function cli() {
+	/*bsl添加
+	 * function cli() {
 		//获取控制其它复选框的对象obj
 		var collid = document.getElementById("all")
 		//获取需要全选，全不选功能的所有复选框
@@ -222,6 +223,6 @@ $(function() {
 				coll[i].checked = false;
 		}
 	}
-	
+	*/
 	/* rooter */
 });

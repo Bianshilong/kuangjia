@@ -11,7 +11,7 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/pages/script/ssm/teacher/teacher.js"></script>
 </head>
 <body>
-	<center>修改老师</center>
+	<center>修改教师信息</center>
 	<hr/>
 	<center>
 		<form action="<%=request.getContextPath()%>/teacher/mod" method="post">

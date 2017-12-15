@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xxx.model.Teacher">
+<mapper namespace="com.xxx.dao.TeacherMapper">
 	<!-- 配置基本映射 -->
-	<resultMap type="com.xxx.model.Teacher" id="BaseRusultMap">
+	<resultMap type="com.xxx.model.Teacher" id="TBaseRusultMap">
 		<id property="id" column="id" />
 		<result property="tecId" column="tec_id" />
 		<result property="tecName" column="tec_name" />
@@ -45,12 +45,14 @@
 		</foreach>
 	</delete>
 	<!-- 根据主键来查询单个数据 -->
-	<select id="selectByPrimaryKey" parameterType="Integer" resultMap="BaseResultMap">
+	<select id="selectByPrimaryKey" parameterType="Integer" resultMap="TBaseRusultMap">
 		select id,tec_id,tec_name,tec_age,tec_tell,tec_sex,tec_addr
-		where id = #{id}
+		from teacher where id = #{id}
 	</select>
 	<!-- 查询所有记录 -->
-	<select id="selectAll" resultMap="BaseResultMap">
-		select * from teacher
+	<select id="selectAll" resultMap="TBaseRusultMap">
+		select 
+		id,tec_id,tec_name,tec_age,tec_tell,tec_sex,tec_addr
+		from teacher
 	</select>
 </mapper>

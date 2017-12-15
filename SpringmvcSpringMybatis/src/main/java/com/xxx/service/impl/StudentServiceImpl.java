@@ -14,7 +14,7 @@ public class StudentServiceImpl implements IStudentService {
 	// 注入DAO层组件
 	@Autowired
 	private StudentMapper studentMapper;
-
+	
 	@Override
 	public boolean insert(Student student) {
 		System.out.println("in student service insert...:"+student);

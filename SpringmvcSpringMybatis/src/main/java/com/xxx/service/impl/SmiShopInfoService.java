@@ -22,7 +22,6 @@ public class SmiShopInfoService implements ISmiShopInfoService {
 	@Autowired
 	public SmiShopInfoMapper shopInfoMapper;
 
-	@Override
 	public SmiShopInfo getShopByNoAndPwd(String shopNo, String password) throws Exception {
 		if (null == shopNo || "".equals(shopNo)) {
 			logger.warn("门店编码为null或空，请检查！");
