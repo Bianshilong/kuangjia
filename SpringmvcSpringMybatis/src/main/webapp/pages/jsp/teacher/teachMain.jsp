@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +11,7 @@
 		window.location.href = "/SpringmvcSpringMybatis/teach/getall"
 	}
 	function addNew() {
-		window.location.href = "/SpringmvcSpringMybatis/teach/addOrmod"
+		window.location.href = "/SpringmvcSpringMybatis/pages/jsp/teacher/teachAdd.jsp"
 	}
 </script>
 </head>
@@ -30,9 +31,27 @@
 					<th>地址</th>
 					<th>操作</th>
 				</tr>
+				<c:forEach var="tec" items="${list }">
+					<tr>
+						<td>
+							<input type="checkbox" name="ids" value="${tec.id }" />
+						</td>
+						<td>
+							<a href="<%=request.getContextPath() %>/teach/getone/${tec.id}">${tec.tecId}</a>
+						</td>
+						<td>${tec.tecName}</td>
+						<td>${tec.tecAge}</td>
+						<td>${tec.tecTell}</td>
+						<td>${tec.tecSex}</td>
+						<td>${tec.tecAddr}</td>
+						<td>
+							<a href="<%=request.getContextPath() %>/teach/del/${tec.id}">删除</a>
+						</td>
+					</tr>
+				</c:forEach>
 			</table>
-			<input type="button" onclick="selectAll()" value="查询所有信息" />&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="button" onclick="addNew()" value="新增教师信息" />&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" onclick="selectAll()" value="查询所有信息" />
+			<input type="button" onclick="addNew()" value="新增教师信息" />
 			<input type="submit" id = "delAll" value="删除选中" />
 		</form>
 	</center>

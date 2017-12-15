@@ -20,8 +20,8 @@ import com.xxx.controller.valueobject.ResultObject;
 import com.xxx.model.Student;
 import com.xxx.service.IStudentService;
 
-@Controller
-@RequestMapping("/student")
+//@Controller
+//@RequestMapping("/student")
 public class StudentController2 { // 这个控制器是处理异步请求的方式
 
 	// 自动注入需要的Service组件

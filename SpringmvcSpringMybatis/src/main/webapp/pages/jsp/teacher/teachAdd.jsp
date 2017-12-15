@@ -6,11 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>新增教师</title>
 <script type="text/javascript">
-	$('#tecCancelBtn')
-			.click(
-					function() {
-						window.location.href = "/SpringmvcSpringMybatis/pages/jsp/teacher/teachMain.jsp";
-					});
+	function goback() {
+		window.location.href = "/SpringmvcSpringMybatis/teach/getall";
+	};
 </script>
 </head>
 <body>
@@ -42,8 +40,8 @@
 					<td><input id="tecAddr" name="tecAddr" type="text" /></td>
 				</tr>
 				<tr>
-					<td><input id="tecSaveBtn" type="button" value="提交" /> <input
-						id="tecCancelBtn" type="button" value="返回" /></td>
+					<td><input id="tecSaveBtn1" type="submit" value="提交" /> <input
+						type="button" value="返回" onclick="goback()" /></td>
 				</tr>
 			</table>
 		</form>

@@ -17,8 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.xxx.model.Student;
 import com.xxx.service.IStudentService;
 
-//@Controller
-//@RequestMapping("/student")
+@Controller
+@RequestMapping("/student")
 //这个控制器是不使用异步的对应方式
 public class StudentController {
 
