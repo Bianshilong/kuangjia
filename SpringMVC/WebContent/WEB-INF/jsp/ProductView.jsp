@@ -4,10 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>错误页面</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h3>${err_del}</h3>
-	<a href="<%=request.getContextPath() %>/" >回到首页</a>
+	<div id="global">
+		<h4>The Product has been saved!</h4>
+		<h5>Details</h5>
+		Tips:${message}<br/>
+		Product ID:${product.id}<br/>
+		Product Name:${product.name}<br/>
+		Description:${product.description}<br/>
+		Price:￥${product.price}<br/>
+	</div>
 </body>
 </html>

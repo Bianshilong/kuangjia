@@ -7,7 +7,7 @@
 <title>更新教师信息</title>
 <script type="text/javascript">
 	function goback() {
-		window.location.href = "/SpringmvcSpringMybatis/teach/getall";
+		window.location.href = "${pageContext.request.contextPath}/teach/getall";
 	};
 </script>
 </head>

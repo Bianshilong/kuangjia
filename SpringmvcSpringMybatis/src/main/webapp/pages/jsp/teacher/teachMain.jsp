@@ -6,13 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>教师组件(other)</title>
+<script type="text/javascript" src="../../script/jquery.min.js"></script>
 <script type="text/javascript">
 	function selectAll() {
-		window.location.href = "/SpringmvcSpringMybatis/teach/getall"
+		window.location.href = "${pageContext.request.contextPath}/teach/getall"
 	}
 	function addNew() {
-		window.location.href = "/SpringmvcSpringMybatis/pages/jsp/teacher/teachAdd.jsp"
+		window.location.href = "${pageContext.request.contextPath}/pages/jsp/teacher/teachAdd.jsp"
 	}
+ 	$(function() {
+		window.location.href = "${pageContext.request.contextPath}/teach/getall"
+	}); 
 </script>
 </head>
 <body>
@@ -20,7 +24,7 @@
 	<center>
 		<form action="<%=request.getContextPath() %>/teach/del" method="post">
 			<!-- 根据页面查询信息来判断是否显示表格 -->
-			<table id = "tab001" border="1" background="green" cellspacing="0">
+			<table id = "tab001" border="1" bordercolor="green" cellspacing="0">
 				<tr>
 					<th>选择</th>
 					<th>编号</th>
@@ -55,5 +59,10 @@
 			<input type="submit" id = "delAll" value="删除选中" />
 		</form>
 	</center>
+	
+<!-- 	<script type="text/javascript">
+	
+		window.location.href = "/SpringmvcSpringMybatis/teach/getall";
+	</script> -->
 </body>
 </html>
